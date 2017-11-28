@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="zh_TW">
+
+<head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <script src="dist/js/app.js"></script>
+    <style>
+        .starter-template{
+            padding: 3rem 1.5rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">十年內冠心病風險評估系統</span>
+    </nav>
+    <main role="main" class="container">
+
+        <div class="starter-template">
+            <h1>Framingham 心血管疾病風險預測</h1>
+            <form>
+                <div class="form-group">
+                    <label for="age">年齡(20歲到79歲)</label>
+                    <input id="age" class="form-control col-md-3">
+                </div>
+                <div class="form-group">
+                    <label for="sex">性別</label>
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="sex" value="女性">女
+                    </label>
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="sex" value="男性">男
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="chole">總膽固醇(mg/dL)</label>
+                    <input id="chole" class="form-control  col-md-3">
+                </div>
+                <div class="form-group">
+                    <label for="high_chole">高密度脂蛋白膽固醇(mg/dL)</label>
+                    <input id="high_chole" class="form-control  col-md-3">
+                </div>
+                <div class="form-group">
+                    <label for="smoke">吸菸與否</label>
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="smoke" value="不抽菸">否
+                    </label>
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="smoke" value="抽菸">是
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="sp">收縮壓(mmHg)</label>
+                    <input id="sp" class="form-control  col-md-3"> 
+                </div>
+                <div class="form-group">
+                    <label for="cure">曾治療過冠心病與否</label>
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="cure" value="未治療過">否
+                    </label>
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="cure" value="曾治療過">是
+                    </label>
+                </div>
+                <button type="button" id="mybutton" onclick=myeval() class="btn btn-primary">風險評估</button>
+            </form>
+            <br>
+            <h3 id="result"></h3>
+                
+        </div>
+
+    </main>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
