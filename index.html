@@ -11,8 +11,12 @@
     <link rel="stylesheet" href="dist/css/bootstrap.min.css">
     <script src="dist/js/app.js"></script>
     <style>
-        .starter-template{
-            padding: 3rem 1.5rem;
+        .starter-template {
+            padding: 1.5rem 0rem;
+        }
+
+        .row {
+            margin-top: 10px;
         }
     </style>
 
@@ -28,59 +32,100 @@
 
         <div class="starter-template">
             <h1>Framingham 心血管疾病風險預測</h1>
-            <form>
-                <div class="form-group">
-                    <label for="age">年齡(20歲到79歲)</label>
-                    <input id="age" class="form-control col-md-3">
-                </div>
-                <div class="form-group">
-                    <label for="sex">性別</label>
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="sex" value="女性">女
-                    </label>
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="sex" value="男性">男
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label for="chole">總膽固醇(mg/dL)</label>
-                    <input id="chole" class="form-control  col-md-3">
-                </div>
-                <div class="form-group">
-                    <label for="high_chole">高密度脂蛋白膽固醇(mg/dL)</label>
-                    <input id="high_chole" class="form-control  col-md-3">
-                </div>
-                <div class="form-group">
-                    <label for="smoke">吸菸與否</label>
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="smoke" value="不抽菸">否
-                    </label>
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="smoke" value="抽菸">是
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label for="sp">收縮壓(mmHg)</label>
-                    <input id="sp" class="form-control  col-md-3"> 
-                </div>
-                <div class="form-group">
-                    <label for="cure">目前是否有服用高血壓藥物</label>
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="cure" value="未治療過">否
-                    </label>
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="cure" value="曾治療過">是
-                    </label>
-                </div>
-                <button type="button" id="mybutton" onclick=myeval() class="btn btn-primary">風險評估</button>
-            </form>
-            <br>
-            <h3 id="result"></h3>
-                
+            <div class="row col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="age">年齡(20歲到79歲)</label>
+                        <input id="age" class="form-control col-md-3">
+                    </div>
+                    <div class="form-group">
+                        <label for="sex">性別</label>
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="sex" value="女性">女
+                        </label>
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="sex" value="男性">男
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="chole">總膽固醇(mg/dL)</label>
+                        <input id="chole" class="form-control  col-md-3">
+                    </div>
+                    <div class="form-group">
+                        <label for="high_chole">高密度脂蛋白膽固醇(mg/dL)</label>
+                        <input id="high_chole" class="form-control  col-md-3">
+                    </div>
+                    <div class="form-group">
+                        <label for="smoke">吸菸與否</label>
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="smoke" value="不抽菸">否
+                        </label>
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="smoke" value="抽菸">是
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="sp">收縮壓(mmHg)</label>
+                        <input id="sp" class="form-control  col-md-3">
+                    </div>
+                    <div class="form-group">
+                        <label for="cure">目前是否有服用高血壓藥物</label>
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="cure" value="沒有服用">否
+                        </label>
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="cure" value="有服用">是
+                        </label>
+                    </div>
+                    <button type="button" id="mybutton" onclick=myeval() class="btn btn-primary">風險評估</button>
+                </form>
+            </div>
+            <div class="row ">
+                <h3 id="result"></h3>
+            </div>
+            <div class="row col-md-6">
+                <table class="table">
+                    <caption>本風險評估依據ATP III利用Framingham Risk Prediction Scoring System建立</caption>
+                    <thead>
+                        <tr>
+                            <th>10年心血管發生率</th>
+                            <th>分類</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&gt;20%</td>
+                            <td>高危險</td>
+                        </tr>
+                        <tr>
+                            <td>10-20%</td>
+                            <td>中度危險</td>
+                        </tr>
+                        <tr>
+                            <td>10%</td>
+                            <td>低危險</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>心臟冠狀動脈疾病簡介</h3>
+            <div class="row col-md-12">
+                <p>心臟本身也需要有血管來供給含氧血液，心臟的含氧血液就靠著由主動脈所分枝出來的的三條冠狀動脈供給(右冠狀動脈、左前下降枝冠狀動脈，左迴旋枝動脈)，一旦阻塞就會影響心臟肌肉本身的血流供應，逐漸造成心臟肌肉的問題，俗稱的『冠心症』。會引起”胸痛:與”心絞痛”這兩種常見症狀，有時甚至會損害控制心律的傳導系統，它可能由於發生阻塞的冠狀動脈，正好影響了心臟搏動的節律，造成突發的惡性心律不整而導致突然死亡的猝死。</p>
+            </div>
+            <h3>電腦斷層</h3>
+            <div class="row col-md-12">
+                <p>是除了侵入性心導管之外，可以應用另一方面檢查則是針對心臟冠狀動脈疾病的二項檢查。包括了： </p>
+                <ol>
+                    <li>心臟冠狀動脈鈣化指數。(不需打顯影劑) </li>
+                    <li>電腦斷層心臟冠狀動脈血管攝影。(需打顯影劑) 這兩種檢查都是針對心臟冠狀動脈的阻塞所作的檢查。</li>
+                </ol>
+                <p>心臟冠狀動脈鈣化指數在中度危險等級（intermediate-risk）的民眾能幫助找出高危險族群和治療策略的改變，省去打顯影劑的風險，受檢者只要閉氣十秒鐘，就能清楚呈現冠狀動脈粥狀斑塊的鈣化程度。</p>
+
+            </div>
         </div>
 
     </main>
-    
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

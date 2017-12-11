@@ -36,7 +36,7 @@ function myeval() {
     }else if(score == 1){
         result.innerHTML = '<div class="alert alert-danger" role="alert">無法計算, 年齡需介於20~79歲之間</div>'
     }else{
-        result.innerHTML = '<div class="alert alert-primary" role="alert">' + "對一位" + age + "歲" + "，" + smoke_type + "，" + cure_type + "冠心病的" + sex_type + "，十年內罹患冠心病的機率為" + score + '</div>';        
+        result.innerHTML = '<div class="alert alert-primary" role="alert">' + "對一位" + age + "歲" + "，" + smoke_type + "，" + cure_type + "高血壓藥物的" + sex_type + "，十年內罹患冠心病的機率為" + score + '</div>';        
     }
     return;
 }
